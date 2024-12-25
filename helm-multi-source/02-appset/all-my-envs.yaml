@@ -9,11 +9,18 @@ spec:
   generators:
   - list:
       elements:
+      - env: ntegration-gpu
+        region: us
+        version: qa
+        type: non-prod
+      - env: integration-non-gpu
+        region: us
+        version: qa
+        type: non-prod
       - env: qa
         region: us  
         type: non-prod   
         version: qa
-        gpuEnabled: integration-non-gpu     
       - env: staging-asia
         region: asia
         type: non-prod  
@@ -52,7 +59,6 @@ spec:
             - $values/helm-multi-source/my-values/env-type/{{.type}}-values.yaml  
             - $values/helm-multi-source/my-values/regions/{{.region}}-values.yaml                
             - $values/helm-multi-source/my-values/envs/{{.env}}-values.yaml
-            - $values/helm-multi-source/my-values/envs/{{.gpuEnabled}}-values.yaml
         - repoURL: 'https://github.com/ForcemCS/gitops-cert-level-3-examples.git'
           targetRevision: HEAD
           ref: values
