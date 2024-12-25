@@ -51,8 +51,8 @@ spec:
             - $values/helm-multi-source/my-values/app-version/{{.version}}-values.yaml               
             - $values/helm-multi-source/my-values/env-type/{{.type}}-values.yaml  
             - $values/helm-multi-source/my-values/regions/{{.region}}-values.yaml                
-            - $values/helm-multi-source/my-values/envs/{{.gpuEnabled}}-values.yaml
             - $values/helm-multi-source/my-values/envs/{{.env}}-values.yaml
+            - $values/helm-multi-source/my-values/envs/{{.gpuEnabled}}-values.yaml
         - repoURL: 'https://github.com/ForcemCS/gitops-cert-level-3-examples.git'
           targetRevision: HEAD
           ref: values
